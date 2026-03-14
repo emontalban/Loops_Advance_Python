@@ -327,3 +327,19 @@ def nombre_funcion(parametros):
     return resultado
 ```
 
+Diferencias entre imprimir y devolver en una funcion es que print muestra informacion al usuario mientras que return envia un valor de vuelta al programa para que pueda ser utilizado posteriormente.
+
+- Imprimir es una accion para visualizar datos en la consola. El valor impreso no se guarda ni puede ser reutilizado por el resto del programa.
+- Devolver es una instruccion que finaliza la funcion y "entrega"  un resultado. Este valor puede almacenarse en una variable, pasarse a otra funcion o utilizarse en calculos.
+
+
+```
+| Característica  |	  Imprimir (print)	         | Devolver (return)                            |
+|-----------------|--------------------------------------|----------------------------------------------|
+| Objetivo	      | Mostrar información al humano.       |	Enviar datos al programa (reutilización).   |
+| Destino         | Consola/Pantalla.                    |  El lugar donde se llamó la función.         |
+| Almacenamiento	| No se puede guardar en una variable. |	Se puede guardar en una variable.           | 
+| Uso Posterior	| No reutilizable automáticamente.	   |  Reutilizable para cálculos.                 |
+| Finalización	| La función continúa.	               |  Finaliza la función inmediatamente.         |
+```
+
