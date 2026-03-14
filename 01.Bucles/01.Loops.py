@@ -1,4 +1,4 @@
-# Uso de for en listas y tuplas es igual
+s# Uso de for en listas y tuplas es igual
 
 languages =["Python", "Rust", "Go", "JavaScript", "TypeScript", "Ruby"]
 
