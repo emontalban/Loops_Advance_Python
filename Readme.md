@@ -236,7 +236,7 @@ Los tres operadores logicos principales son:
 - or
 - not
 
-#### And
+####  Operador lógico `and`
 El operador and se utiliza para combinar dos o mas condicionales y el resultado sera True unicamente si todas las condiciones evaluadas son verdaderas.
 
 ```
@@ -248,9 +248,10 @@ El operador and se utiliza para combinar dos o mas condicionales y el resultado 
 | False       | True        | False     |
 | False       | False       | False     |
 ```
-
+####  Operador lógico `or`
+El operador  or se utiliza cuando se quiere al menos una condicon se verdadera para que la expresin  completa sea verdadera.
+Solo devuelve false cuando todas las condiciones son falsas.
 ```
-## Operador lógico `or`
 
 | Condición A | Condición B | Resultado |
 |-------------|-------------|-----------|
@@ -260,9 +261,14 @@ El operador and se utiliza para combinar dos o mas condicionales y el resultado 
 | False       | False       |     False |
 
 ```
+#### Operador lógico `not`
+
+El operador not se utiliza para invertir el valor logico de una condicion.
+
+Si La condicion es True, `not` la convierte en False
+Si la condicion es False, `not` la convierte en True
 
 ```
-## Operador lógico `not`
 
 | Condición | Resultado |
 |-----------|-----------|
@@ -276,4 +282,48 @@ Prioridad de operadores logicos
 | 1         | not      | Niega o invierte el valor lógico                  |
 | 2         | and      | True solo si todas las condiciones son verdaderas |
 | 3         | or       | True si al menos una condición es verdadera       |
+
 ```
+
+## Condicionales Compuestos
+Un condicional compuesto es una estructura en la que varias condiciones se combinan mediante operadores logicos (and, or, not) para formar una unica expresion logica.ç
+Esto permite construir decisiones mas complejas dentro de un programa, evaluando multiples criterios antes de ejecutar un bloque de codigo.
+
+Gracias a estos operadores es posible construir expresiones lógicas complejas, mejorar el control del flujo del programa y tomar decisiones basadas en múltiples criterios.
+
+## Extended iterable unpacking (operador *)
+Es una caracteristica de python que permite descomponer una secuencia en multiples variables, utilizando el operador * para capturar un numero variable de elemento dentro de una lista.
+
+Este mecanimos permite trabajar de forma flexible con estructuras de datos cuando no conocemos exactamente cuantos elementos habra  en una parte determinada de la secuencia.
+```
+a, b, c = [1,2,3]   # Ejemplo lista
+a, b, c = [1,2,3,4] # Da error
+a, *b = [1,2,3,4]   # El operador soluciona el error
+```
+
+```
+first, *rest = [1,2,3,4,5]
+
+first = 1
+rest = [2,3,4,5]
+```
+
+
+## Funciones
+
+Las funciones son bloques de codigo reutilizable y organizado que realiza una tarea especifica.
+Se define usando la palabra clave def, permitiendo agurpar instruccciones multiples veces, mejorando la modulariddad y evitando repetir codigo. Puede recibir paramentros y devolver resultados usando return.
+
+Reciben como parametros datos de entrada llamados argumentos, que se indica por el usuario o por defecto, los procesan y los devuelven datos de salida.
+
+Las funciones sirven para :
+
+- Dividir y ordenar  el codigo en partes mas sencillas  para depurar y programar con mayor facilidad.
+- Reutilizar el codigo, evitando repeticiones  innecesarias.
+
+```
+def nombre_funcion(parametros):
+    bloque_de_codigo
+    return resultado
+```
+
