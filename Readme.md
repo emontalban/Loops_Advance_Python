@@ -334,12 +334,84 @@ Diferencias entre imprimir y devolver en una funcion es que print muestra inform
 
 
 ```
-| Característica  |	  Imprimir (print)	         | Devolver (return)                            |
+| Característica  |	        Imprimir (print)	         | Devolver (return)                            |
 |-----------------|--------------------------------------|----------------------------------------------|
-| Objetivo	      | Mostrar información al humano.       |	Enviar datos al programa (reutilización).   |
+| Objetivo	      | Mostrar información.       |	Enviar datos al programa (reutilización).   |
 | Destino         | Consola/Pantalla.                    |  El lugar donde se llamó la función.         |
-| Almacenamiento	| No se puede guardar en una variable. |	Se puede guardar en una variable.           | 
-| Uso Posterior	| No reutilizable automáticamente.	   |  Reutilizable para cálculos.                 |
-| Finalización	| La función continúa.	               |  Finaliza la función inmediatamente.         |
+| Almacenamiento  | No se puede guardar en una variable. |	Se puede guardar en una variable.           | 
+| Uso Posterior	  | No reutilizable automáticamente.     |  Reutilizable para cálculos.                 |
+| Finalización	  | La función continúa.	             |  Finaliza la función inmediatamente.         |
 ```
+
+## Funciones anidadas en python
+Las funciones anidadas tambien llamadas nested functions son un concepto fundamental dentro del diseño de funciones y del manejo del ambito de las variables(scope).
+Son funciones dentro de otra funcion lo que permite encapsular logica y acceder a las variables del ambito superior.
+De esta forma puedes simplificar el codigo y reutilizar funciones que ya hayas desarrollado en las nuevas funciones que desarrollas.
+La funcion exterior se denomina normalmento funcion contenedora, mientras que la funcion definida dentro de ella se conoce como funcion interna.
+La funciones anidades resonde a un principo de encapsulacion dentro de la programacion. Esto significa que permite agrupar logica auxiliar dentro de una funcion principal sin exponerla al resto del programa.
+La funcion externa defina un entorno local de ejecucion, dentro de ese entorno se pueden declarar subfunciones que pertenecen unicamente a ese contexto.
+Por lo tanto la funcion interna no forma parte del espacio global del programa, sino que queda limitada al ambito de la funcion exterior.
+Esto se utiliza  para organizar mejor la logica del programa, ocultar detalles de implementacion o crear estructuras mas modulares.
+
+## Argumento de una funcion
+Los argumentos son los valores que se proporcionan a una funcion cuando esta es invocada, con el objeto de tranferir informacion al interior de la funcion para que puede operar sobre esos datos.
+
+Desde un punto de vista conceptual, los argumentos representan el mecaniemo de comunicacion entre el exterior de la funcion y su contexto interno de ejecucion.
+
+Cuando una funcion se ejecuta, se crea un entorno local en el que los valores de los argumentos se asocian a los paramentros definidos en la funcion.. Esta asociacion permite  que la logica interna de la funcion utilice esos valores para ralizar calculos, transformaciones o evaluaciones.
+
+## Argumentos y parametros
+
+**Parametros** son las variables definidas en la declaracion de la funcion. Actuan como contenedores que recibiran los valores cuando la funcion sea llamada.
+
+**Argumentos** son los valores reales que se pasan a la funcion durante la llamada
+
+En terminos teoricos:
+- El parametro pertenece a la definicion de la funcion.
+- El argumento pertenece a la invocacion de la funcion.
+
+
+## Asociacion entre argumentosy parametros
+Este proceso puede realizarse mediante distintos mecanismos, siendo los mas comunes por posicion y por nombre.
+
+- **Por Posicion**
+Los argumentos por posicion son aquellos que se asignan  a los paramentros de una funcion segun el orden en el que aparecen en la llamada.
+
+La corrrespondencia entre argumentos y paramentros se basa exclusivamente en la posicion relativa dentro  de la lista de argumentos.Esto significa que:
+
+    - El primer argumento se a asigna al primer paramentro
+    - El segundo argumento al segundo parametro 
+    - y asi sucesivamente.
+
+Si se altera el orden, los valores pueden asociarse a parametros incorrectos, lo que puede modificar completamente el comportamiento de la funcion. Por ello se usa  cuando el numero de parametros es pequeño, el orden de los parametros es claro o cuando el significado de los valores es evidente.
+
+En los parametros tambien podemos tener un paramentro opcional que tiene un valor asociado predeterminado de manera que la funcion puede ejecutarse aunque ese argumento no se proporcionado durante la llamada.
+
+Se considera opcional cuando la funcion ddispones de un valor previamente definido que sera utilizado automaticamente si el usuario no pasa un argumento para ese paramentro.
+El valor predeterminado se denomina valor por defecto.
+
+El orden de los parametros es primero los obligatorios y luego los opcionales
+´´´
+def saludar(nombre, mensaje="Hola"):
+    print(f"{mensaje}, {nombre}!")
+
+saludar('Keira')
+´´´
+
+- **Por** **nombre**
+Los parametros por nombre (keywords arguments) permite asignar valores a los argumentos de funcion utilizando el nombre del parametro y en lugar de su posicion. Esto mejora la legibilidad, permit cambiar el orden de los argumentos y facilita la omision de parametros con valores predeterminados.
+
+Al usar nombres el orden de los argumentos en la llamada no importa.
+Usando un asterisco * en la definicion, se fuerza a que los parametros siguientes se pasen por nombre.
+
+```
+def funcion(*, a, b):
+    return a + b
+# funcion(1, 2) # Error
+funcion(a=1, b=2) # Correcto
+
+```
+
+unpacking (*args) join
+** kwargs
 
