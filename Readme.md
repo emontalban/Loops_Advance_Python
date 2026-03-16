@@ -165,9 +165,9 @@ Se utiliza para tomar decisiones, validar datos, controlar procesos y dirigir la
 ## Operador Ternario
 Es la forma abreviada de escribir una estructura condicional if-else en una sola linea. Permite evaluar una condicion y devolver un valor u otro dependiendo de si la condicion es verdadera o falsa.
 Se llama ternario porque esta formado por tres partes:
-- 1. El valor que se devuelve si la condicion es verdadera
-- 2. La conddicion que se evalua
-- 3. El valor que se devuelve si la condicion es falsa.
+      - El valor que se devuelve si la condicion es verdadera
+      - La conddicion que se evalua
+      - El valor que se devuelve si la condicion es falsa.
 
 Su objetivo principal es simplificar expresiones condicionales simples, haciendo el codigo mas compacto y legible cuando solo se necesita elegir entre dos resultados.
 
@@ -425,12 +425,25 @@ Evita la creacion de funciones sobrecargadas o con demasiados parametros opciona
 
 De manera similar funciona **kwargs 
 
-Kwargs es una convencion de python para empaquetar argumentos de  palabra clave (keyword arguments)en otras palabras para empaquetar diccionarios y funciona con cualquier nombre siempre que se mantenga el doble arterisco al principio, pero no es la conveccion y una buena practica para que el codigo sea legible.
+Kwargs es una convencion de python para empaquetar argumentos de  palabra clave (keyword arguments). En otras palabras para empaquetar diccionarios y funciona con cualquier nombre de variable siempre que se mantenga el doble arterisco (**) al principio, pero no es la conveccion y una buena practica para que el codigo sea legible.
 
-Los argumentos pasados se res dentro de una funcion como un diccionario lo que permite iterarlos
+Los argumentos pasados se reciben dentro de una funcion como un diccionario, donde las claves representan los nombre de los argumentos y los valores de los datos asociado, lo que permite iterarlos
 
+** Join() con *args
+El metodo join() pertenece al tipo cadena de texto(str) y se utiliza para concatenar multiples candenas en una sola.
 
+Su funcionamiento es el siguiente, se toma la seucneca iterable de cadenas, se inserta entre ellas una cadena separadora y el resultado es una nueva cadena resultante.
 
- join
-** kwargs
+Es importatnte entender que join() no concatena directamente argumentos individuales, sino que necesita una estructura iterable que contenga las cadenas
+
+Dado que join() necesita precisamente un iterable de cadenas, la tupla generada por *args puede utilizarse directamente como entrada para join().
+
+El funcionamiento es: El usuario pasa varios argumentos posicionales a la funcion, python los agrupa automaticamente en una tupla(args), esta tupla actua como secuencia de elementos, join() recorre esa secuenciay combina sus elementos en una sola cadena utilizando un separador.
+```
+def unir_lenguajes(*args):
+    return ", ".join(args)
+
+resultado = unir_lenguajes("Python", "Java", "C++", "JavaScript")
+print(resultado)
+```
 
