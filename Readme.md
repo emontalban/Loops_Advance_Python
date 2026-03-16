@@ -411,7 +411,20 @@ def funcion(*, a, b):
 funcion(a=1, b=2) # Correcto
 
 ```
+## *args y **kwargs (unpacking)
+*arg permite a una funcion recibir un numero variable de argumentos posicionales, empaquetandolos automaticcamente en un tupla.
 
-unpacking (*args) join
+Se usa anteponiendo un arterisco (*) al nombre del parametro (convencionalmente args),
+se puede usar cualquier nombre pero es de buenas practicas usar args.
+
+Permite que  una funcion reciba desde cero hasta infinitos argumentos sin tener que definirlos todos explicitamente.
+
+Es ideal cuando no sabes de antemano cuantos parametros pasara el usuario.
+
+Evita la creacion de funciones sobrecargadas o con demasiados parametros opcionales.
+
+
+
+ join
 ** kwargs
 
