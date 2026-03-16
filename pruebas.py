@@ -1,7 +1,7 @@
 
 
+def unir_lenguajes(*args):
+    return (f'Los lenguajes de programacion son {", ".join(args)}')
 
-def saludar(nombre, mensaje="Hola"):
-    print(f"{mensaje}, {nombre}!")
-
-saludar('Edurne','Como te encuentras hoy?')
+resultado = unir_lenguajes("Python", "Java", "C++", "JavaScript")
+print(resultado)

@@ -88,7 +88,7 @@ terminar antes de 10
 avanzar de 2 en 2
 ```
 
-### Braak y Continue
+### Break y Continue
 #### Break
 Break es la palabra clave que permite interrumpir inmediatamente un bucle, el proposito es salir del bucle cuando se 
 cumple la condicion especifica, un uso tipico es detener el bucle  al encontrar un valor buscado o evitar procesamiento adicional
@@ -170,9 +170,9 @@ Se llama ternario porque esta formado por tres partes:
       - El valor que se devuelve si la condicion es falsa.
 
 Su objetivo principal es simplificar expresiones condicionales simples, haciendo el codigo mas compacto y legible cuando solo se necesita elegir entre dos resultados.
-
+```
 valor_si_true if condicion else valor_si_false
-
+```
 ## Operador ternario en expresiones
 Puede usarse dentro de expresiones lo que significa que puede formar parte de una asignacion, una operacion o una funcion.En este caso el operador evalua la condicion y devuelve uno de dos valores posibles dependiendo del resultado.
 
@@ -441,9 +441,25 @@ Dado que join() necesita precisamente un iterable de cadenas, la tupla generada 
 El funcionamiento es: El usuario pasa varios argumentos posicionales a la funcion, python los agrupa automaticamente en una tupla(args), esta tupla actua como secuencia de elementos, join() recorre esa secuenciay combina sus elementos en una sola cadena utilizando un separador.
 ```
 def unir_lenguajes(*args):
-    return ", ".join(args)
+    return (f'Los lenguajes de programacion son {", ".join(args)}')
 
 resultado = unir_lenguajes("Python", "Java", "C++", "JavaScript")
 print(resultado)
+
+# natural language list formatting
+
+def unir_lenguajes(*args):
+    if len(args) == 1:
+        lista = args[0]
+    elif len(args) == 2:
+        lista = " y ".join(args)
+    else:
+        lista = ", ".join(args[:-1]) + " y " + args[-1]
+
+    return f"Los lenguajes de programación son {lista}"
+
+resultado = unir_lenguajes("Python", "Java", "C++", "JavaScript")
+print(resultado)
+
 ```
 
