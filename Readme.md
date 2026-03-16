@@ -423,6 +423,12 @@ Es ideal cuando no sabes de antemano cuantos parametros pasara el usuario.
 
 Evita la creacion de funciones sobrecargadas o con demasiados parametros opcionales.
 
+De manera similar funciona **kwargs 
+
+Kwargs es una convencion de python para empaquetar argumentos de  palabra clave (keyword arguments)en otras palabras para empaquetar diccionarios y funciona con cualquier nombre siempre que se mantenga el doble arterisco al principio, pero no es la conveccion y una buena practica para que el codigo sea legible.
+
+Los argumentos pasados se res dentro de una funcion como un diccionario lo que permite iterarlos
+
 
 
  join
