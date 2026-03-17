@@ -462,4 +462,47 @@ resultado = unir_lenguajes("Python", "Java", "C++", "JavaScript")
 print(resultado)
 
 ```
+## Lambda
+Una funcion lambda en python es un pequeña funcion anonima de una soloa linea definida sin nombre usando la palaba clave lambda en lugar de def.
+Son ideales para tareas temporales, simples, y se usan comunmente como argumentos en funciones de orden superior como map(), filter() o sort().
+Este tipo de funiones puedewn tomar cualquier numero de argumentos pero solo pueden tener una expresion.
+Su sintaxis es:
 
+- argumentos son los valores que recibe la funcion
+
+- expresion es la operacion que se ejecuta y cuyo resultado se devuelve
+
+
+```
+lambda argumentos: expresion
+```
+La lambda no necesita return, porque el resultado se devuelve automaticamente
+
+Una función lambda es una función anónima, es decir, una función que no tiene nombre y que se define utilizando la palabra clave lambda.
+
+Desde el punto de vista conceptual, una lambda permite crear una función simple directamente en el lugar donde se necesita, sin tener que definirla previamente con def.
+
+Se utilizan principalmente cuando la funcion es corta, solo se necesita una vez y se quier escribir el codigo de forma  mas compacta. A diferencia de las funciones normales devuelve automaticamente el resulta de esa expresion.
+Las lambdas son útiles cuando:
+
+ - la función es muy simple
+ - se usa una sola vez
+ - se necesita como argumento de otra función
+
+Sin embargo, cuando la lógica es más compleja, es mejor usar funciones normales con def, porque son más claras y fáciles de mantener.
+
+## Librerias
+
+```
+ CÓDIGO
+   │
+   ├── Built-in (print, format, len)
+   │
+   ├── Standard Library (math, datetime, os)
+   │
+   └── Third-party (numpy, requests, pandas)
+            │
+            └── PyPI (repositorio online)
+                     │
+                     └── pip (instalador)
+```

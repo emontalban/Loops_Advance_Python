@@ -49,3 +49,26 @@ describir_lenguajes(
     uso_principal="desarrollo web y software",
     paradigma="orientado a objetos y funcional"
 )
+
+
+
+
+def unir_lenguajes(*args):
+    return (f'Los lenguajes de programacion son {", ".join(args)}')
+
+resultado = unir_lenguajes("Python", "Java", "C++", "JavaScript")
+print(resultado)
+
+
+def unir_lenguajes(*args):
+    if len(args) == 1:
+        lista = args[0]
+    elif len(args) == 2:
+        lista = " y ".join(args)
+    else:
+        lista = ", ".join(args[:-1]) + " y " + args[-1]
+
+    return f"Los lenguajes de programación son {lista}"
+
+resultado = unir_lenguajes("Python", "Java", "C++", "JavaScript")
+print(resultado)
