@@ -88,19 +88,35 @@ terminar antes de 10
 avanzar de 2 en 2
 ```
 
-### Break y Continue
 #### Break
 Break es la palabra clave que permite interrumpir inmediatamente un bucle, el proposito es salir del bucle cuando se 
 cumple la condicion especifica, un uso tipico es detener el bucle  al encontrar un valor buscado o evitar procesamiento adicional
 cuando ya se alcanzo el objetivo.
-Break detiene el bucle por completo incluso si todavia qudan elementos por iterar. 
-
+Break detiene el bucle por completo incluso si todavia quedan elementos por iterar. 
+```python
+lenguajes =['Go', 'Java', 'Ruby', 'Python', 'Swift', 'PHP']
+for lenguaje in lenguajes:
+    if lenguaje == "Python":
+        print(f"{lenguaje} fue encontrado en la posición {lenguajes.index(lenguaje)}")
+        break
+    print(lenguaje)
+    
+```
 #### Continue
 Continue  es una palabra clave que permite saltar la iteracion actual de un bucle y continuar con la siguiente iteracion. 
 Omite ciertas iteraciones que cumplen una condicion, sin deterner el bucle completo. Se usa para saltar elementos no deseados e ignorar
 casos especificos mientras se sigue procesando el resto de la secuencia.
 Continue no termina el bucle, solo omite la iteracion actual.
+```python
+lenguajes =['Java', 'Ruby', 'Python', 'Swift', 'PHP']
 
+for lenguaje in lenguajes:
+    if lenguaje == "Python":
+        print(f"No procesamos {lenguaje}, seguimos con los demás...")
+        continue
+    print(f"{lenguaje} será procesado normalmente")
+
+```
 ## Lista compresiva
 
 Una list Comprehension es una estructura que permite crear un lista nueva aplicando una expresion a cada elemento de una secuencia.
