@@ -390,31 +390,35 @@ En terminos teoricos:
 ## Asociacion entre argumentosy parametros
 Este proceso puede realizarse mediante distintos mecanismos, siendo los mas comunes por posicion y por nombre.
 
-- **Por Posicion**
-Los argumentos por posicion son aquellos que se asignan  a los paramentros de una funcion segun el orden en el que aparecen en la llamada.
+**Por Posicion** 
 
-La corrrespondencia entre argumentos y paramentros se basa exclusivamente en la posicion relativa dentro  de la lista de argumentos.Esto significa que:
+Los argumentos por posicion son aquellos que se asignan a los paramentros de una funcion segun el orden en el que aparecen en la llamada.
+La corrrespondencia entre argumentos y paramentros se basa exclusivamente en la posicion relativa dentro de la lista de argumentos.
 
-    - El primer argumento se a asigna al primer paramentro
-    - El segundo argumento al segundo parametro 
-    - y asi sucesivamente.
+Esto significa que:
 
-Si se altera el orden, los valores pueden asociarse a parametros incorrectos, lo que puede modificar completamente el comportamiento de la funcion. Por ello se usa  cuando el numero de parametros es pequeño, el orden de los parametros es claro o cuando el significado de los valores es evidente.
+- El primer argumento se a asigna al primer paramentro
+- El segundo argumento al segundo parametro 
+- y asi sucesivamente.
+
+Si se altera el orden, los valores pueden asociarse a parametros incorrectos, lo que puede modificar completamente el comportamiento de la funcion. Por ello se usa cuando el numero de parametros es pequeño, el orden de los parametros es claro o cuando el significado de los valores es evidente.
 
 En los parametros tambien podemos tener un paramentro opcional que tiene un valor asociado predeterminado de manera que la funcion puede ejecutarse aunque ese argumento no se proporcionado durante la llamada.
 
-Se considera opcional cuando la funcion ddispones de un valor previamente definido que sera utilizado automaticamente si el usuario no pasa un argumento para ese paramentro.
-El valor predeterminado se denomina valor por defecto.
+Se considera opcional cuando la funcion dispones de un valor previamente definido que sera utilizado automaticamente si el usuario no pasa un argumento para ese paramentro. El valor predeterminado se denomina valor por defecto.
 
 El orden de los parametros es primero los obligatorios y luego los opcionales
-´´´
-def saludar(nombre, mensaje="Hola"):
-    print(f"{mensaje}, {nombre}!")
+```python
+    def saludar(nombre, mensaje="Hola"):
+        print(f"{mensaje}, {nombre}!")
 
-saludar('Keira')
-´´´
+    saludar('Keira')  # Hola, Keira
+    saludar('Hexe','¿Como estas?') # ¿Como estas?, Hexe!
+    
+```
 
-- **Por** **nombre**
+**Por nombre**
+  
 Los parametros por nombre (keywords arguments) permite asignar valores a los argumentos de funcion utilizando el nombre del parametro y en lugar de su posicion. Esto mejora la legibilidad, permit cambiar el orden de los argumentos y facilita la omision de parametros con valores predeterminados.
 
 Al usar nombres el orden de los argumentos en la llamada no importa.
